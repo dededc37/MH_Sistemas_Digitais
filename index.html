@@ -15,81 +15,148 @@
             <div class="logo">MH Sistemas Digitais</div>
             <ul class="nav-links">
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#agendamento">Agendamento</a></li>
-                <li><a href="#cardapio">Cardápio Digital</a></li>
-                <li><a href="#whatsapp">WhatsApp</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Seção Inicial -->
-    <section id="inicio" class="hero">
+    <!-- Hero Section com Paralaxe -->
+    <section id="inicio" class="hero parallax">
+        <div class="parallax-bg"></div>
         <div class="hero-content" data-aos="fade-up">
             <h1>Transforme seu Negócio com Nossas Soluções Digitais</h1>
             <p>Sistemas inteligentes para otimizar sua gestão e aumentar seus resultados</p>
-            <a href="#agendamento" class="cta-button">Conheça Nossas Soluções</a>
+            <a href="#servicos" class="cta-button">Conheça Nossas Soluções</a>
         </div>
     </section>
 
-    <!-- Seção Agendamento -->
-    <section id="agendamento" class="service-section">
-        <div class="container" data-aos="fade-right">
-            <h2>Sistema de Agendamento Online</h2>
-            <div class="service-content">
-                <div class="service-text">
-                    <p>Gerencie seus horários de forma simples e eficiente. Permita que seus clientes agendem serviços online, reduzindo filas e melhorando a experiência do cliente.</p>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> Agendamento 24/7</li>
-                        <li><i class="fas fa-check"></i> Confirmação automática</li>
-                        <li><i class="fas fa-check"></i> Gestão de horários</li>
-                    </ul>
-                    <a href="agendamento.html" class="service-button">Saiba Mais</a>
-                </div>
-                <div class="service-image">
-                    <img src="images/agendamento.jpg" alt="Sistema de Agendamento">
+    <!-- Seção Sobre com Paralaxe -->
+    <section id="sobre" class="about-section parallax">
+        <div class="parallax-bg"></div>
+        <div class="container">
+            <div class="about-content" data-aos="fade-right">
+                <h2>Sobre Nós</h2>
+                <p>A MH Sistemas Digitais é uma empresa especializada em desenvolvimento de soluções digitais para gestão de negócios. Nossa missão é transformar a forma como as empresas operam, oferecendo ferramentas inovadoras e eficientes.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Clientes Atendidos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Satisfação</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Suporte</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção Cardápio Digital -->
-    <section id="cardapio" class="service-section">
-        <div class="container" data-aos="fade-left">
-            <h2>Sistema de Cardápio Digital</h2>
-            <div class="service-content reverse">
-                <div class="service-text">
-                    <p>Apresente seus produtos de forma moderna e interativa. Atualize preços e itens em tempo real, oferecendo uma experiência única para seus clientes.</p>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> QR Code personalizado</li>
-                        <li><i class="fas fa-check"></i> Atualização em tempo real</li>
-                        <li><i class="fas fa-check"></i> Fotos em alta qualidade</li>
-                    </ul>
-                    <a href="cardapio.html" class="service-button">Saiba Mais</a>
+    <!-- Seção Serviços -->
+    <section id="servicos" class="services-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card parallax" data-aos="fade-up">
+                    <div class="service-image">
+                        <img src="images/agendamento.jpg" alt="Sistema de Agendamento">
+                        <div class="service-overlay">
+                            <h3>Sistema de Agendamento Online</h3>
+                            <p>Gerencie seus horários de forma simples e eficiente</p>
+                            <a href="agendamento.html" class="service-button">Saiba Mais</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-image">
-                    <img src="images/cardapio.jpg" alt="Cardápio Digital">
+                <div class="service-card parallax" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-image">
+                        <img src="images/cardapio.jpg" alt="Cardápio Digital">
+                        <div class="service-overlay">
+                            <h3>Cardápio Digital</h3>
+                            <p>Apresente seus produtos de forma moderna e interativa</p>
+                            <a href="cardapio.html" class="service-button">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card parallax" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-image">
+                        <img src="images/whatsapp.jpg" alt="Atendimento WhatsApp">
+                        <div class="service-overlay">
+                            <h3>Atendimento WhatsApp</h3>
+                            <p>Automatize seu atendimento e melhore a experiência</p>
+                            <a href="whatsapp.html" class="service-button">Saiba Mais</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção WhatsApp -->
-    <section id="whatsapp" class="service-section">
-        <div class="container" data-aos="fade-right">
-            <h2>Sistema de Atendimento Automático WhatsApp</h2>
-            <div class="service-content">
-                <div class="service-text">
-                    <p>Automatize seu atendimento no WhatsApp, respondendo dúvidas comuns e direcionando clientes de forma inteligente.</p>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> Respostas automáticas</li>
-                        <li><i class="fas fa-check"></i> Integração com CRM</li>
-                        <li><i class="fas fa-check"></i> Relatórios de atendimento</li>
-                    </ul>
-                    <a href="whatsapp.html" class="service-button">Saiba Mais</a>
+    <!-- Seção Diferenciais -->
+    <section class="features-section parallax">
+        <div class="parallax-bg"></div>
+        <div class="container">
+            <h2 data-aos="fade-up">Por que Escolher a MH Sistemas?</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Inovação Constante</h3>
+                    <p>Sempre atualizados com as últimas tecnologias do mercado</p>
                 </div>
-                <div class="service-image">
-                    <img src="images/whatsapp.jpg" alt="Atendimento WhatsApp">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Segurança Garantida</h3>
+                    <p>Seus dados protegidos com as mais avançadas tecnologias</p>
                 </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-headset"></i>
+                    <h3>Suporte Dedicado</h3>
+                    <p>Equipe especializada pronta para ajudar 24/7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="contact-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Entre em Contato</h2>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Rua Exemplo, 123 - Centro</p>
+                        <p>São Paulo - SP</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>(11) 1234-5678</p>
+                        <p>(11) 98765-4321</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>contato@mhsistemas.com.br</p>
+                    </div>
+                </div>
+                <form class="contact-form" data-aos="fade-left">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Telefone">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Mensagem" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Mensagem</button>
+                </form>
             </div>
         </div>
     </section>
@@ -101,7 +168,7 @@
                 <div class="footer-section">
                     <h3>Contato</h3>
                     <p>Email: contato@mhsistemas.com.br</p>
-                    <p>Telefone: (XX) XXXX-XXXX</p>
+                    <p>Telefone: (11) 1234-5678</p>
                 </div>
                 <div class="footer-section">
                     <h3>Redes Sociais</h3>

@@ -5,7 +5,44 @@ AOS.init({
     offset: 100
 });
 
-// Smooth scroll para links internos
+// Efeito de Paralaxe
+document.addEventListener('DOMContentLoaded', function() {
+    const parallaxElements = document.querySelectorAll('.parallax');
+    
+    window.addEventListener('scroll', function() {
+        parallaxElements.forEach(element => {
+            const speed = 0.5;
+            const yPos = -(window.pageYOffset * speed);
+            element.style.transform = `translateY(${yPos}px)`;
+        });
+    });
+});
+
+// Header Scroll Effect
+const header = document.querySelector('header');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+        header.classList.remove('scroll-up');
+        return;
+    }
+    
+    if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+        // Scroll Down
+        header.classList.remove('scroll-up');
+        header.classList.add('scroll-down');
+    } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+        // Scroll Up
+        header.classList.remove('scroll-down');
+        header.classList.add('scroll-up');
+    }
+    lastScroll = currentScroll;
+});
+
+// Smooth Scroll para links de navegação
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -19,50 +56,71 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Header transparente no topo e com fundo ao rolar
-const header = document.querySelector('header');
-let lastScroll = 0;
+// Animação dos números na seção de estatísticas
+const stats = document.querySelectorAll('.stat-number');
+const observerOptions = {
+    threshold: 0.5
+};
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll <= 0) {
-        header.style.background = 'transparent';
-        header.style.boxShadow = 'none';
-    } else {
-        header.style.background = 'var(--white)';
-        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    }
-    
-    lastScroll = currentScroll;
-});
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const target = entry.target;
+            const value = parseInt(target.textContent);
+            animateValue(target, 0, value, 2000);
+            observer.unobserve(target);
+        }
+    });
+}, observerOptions);
 
-// Animação do contador de números
-const animateValue = (element, start, end, duration) => {
+stats.forEach(stat => observer.observe(stat));
+
+function animateValue(obj, start, end, duration) {
     let startTimestamp = null;
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        element.innerHTML = Math.floor(progress * (end - start) + start);
+        obj.textContent = Math.floor(progress * (end - start) + start);
         if (progress < 1) {
             window.requestAnimationFrame(step);
         }
     };
     window.requestAnimationFrame(step);
-};
+}
 
-// Observador de interseção para animar elementos quando visíveis
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-        }
+// Formulário de Contato
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Aqui você pode adicionar a lógica para enviar o formulário
+        // Por exemplo, usando fetch para enviar para um servidor
+        
+        // Feedback visual
+        const submitButton = this.querySelector('.submit-button');
+        submitButton.textContent = 'Enviando...';
+        submitButton.disabled = true;
+        
+        // Simular envio (remover em produção)
+        setTimeout(() => {
+            submitButton.textContent = 'Mensagem Enviada!';
+            this.reset();
+            
+            setTimeout(() => {
+                submitButton.textContent = 'Enviar Mensagem';
+                submitButton.disabled = false;
+            }, 3000);
+        }, 1500);
     });
-}, {
-    threshold: 0.1
-});
+}
 
-// Adicionar observador aos elementos que devem ser animados
-document.querySelectorAll('.service-section').forEach(section => {
-    observer.observe(section);
+// Menu Mobile (para implementar posteriormente)
+const menuButton = document.createElement('button');
+menuButton.classList.add('menu-toggle');
+menuButton.innerHTML = '<i class="fas fa-bars"></i>';
+document.querySelector('nav').appendChild(menuButton);
+
+menuButton.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active');
 }); 
